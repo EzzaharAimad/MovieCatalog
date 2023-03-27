@@ -1,0 +1,19 @@
+Why hard-codeing URL's bad?
+-Changes require code updates
+-Dynamic URLs in the cloud: supposing we're pushing into an AWS instance, we have no idea what our URLs going to be
+-Load balancing
+-Multiple environments
+
+in Object-oriented programming (OOP), abstraction is the process of hiding the implementation details from the user,
+in other words, developers (the users of abstract classes) will have the information on what the object does instead of how it does it,
+
+So comes "Service Discovery": (an abstraction layer between me and spring)
+Model1 Client side service discovery : an in-between Discovery Server provides the client with the URL of the server he needs, then the client reach to the server
+Model2 Server side service discovery : the Client sends directly the message to the discovery server which sends it to the server without hops
+
+Spring Cloud uses Client side service discovery, and Eureka is the technology used to implement this.
+
+Steps to discover urls instead of hard coding em:
+1.start up eureka server
+2.Have microvervices register (publish) using eureka client
+3.Have microservices locate (consume) using eureka client
